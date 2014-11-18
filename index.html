@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+	<LINK REL=StyleSheet HREF="css/main.css" TYPE="text/css">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="js/jquery-2.1.1.js"></script>
+	<script type="text/javascript" src="js/knockout-3.2.0.js"></script>
+	
+  <link rel="stylesheet" href="chui/chui-ios-3.8.0.min.css">
+  <script src="chui/chocolatechip-3.8.0.min.js"></script>
+  <script src="chui/chui-3.8.0.min.js"></script>
+  <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+</head>
+<body>
+	<nav class="current">
+    <h1>BillSplitter</h1>
+  </nav>
+  <article class="current">
+	<div>
+		Total: <span data-bind="text: bill.total"></span>€<br/>
+		Parts: <span data-bind="text: bill.parts"></span><br/>
+	</div>
+
+
+	Total : <input data-bind="value: bill.total" id="billTotal" type="number" value="0" />
+	<ul class="list" data-bind="foreach:bill.rows">
+		<li><div data-bind="text: fullText"></div></li>
+	</ul>
+	<input id="inputName" type="text" size="10" placeholder="Name"/>
+	<input id="inputPart" type="number" size="10" placeholder="Parts"/>
+	<span class="button" data-bind="click: bill.addRow">Add</span>
+  </article>
+</body>
+<script type="text/javascript" src="js/main.js"></script>
+</html>
