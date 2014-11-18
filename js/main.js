@@ -30,7 +30,7 @@ function bill(total, p){
 	self.addRow = function(){
 		var n = $("#inputName").val();
 		var p = $("#inputPart").val();
-		if(p != "" and n != ""){
+		if(p != "" && n != ""){
 			var r = new row(n, p, 0);
 			self.rows.push(r);
 			self.addparts(p);
@@ -39,7 +39,12 @@ function bill(total, p){
 }
 function AppViewModel(){
 	var self = this;
-	var billTotal = $("#billTotal").val();
+	if($("#billTotal").val() > 0)
+		var billTotal = $("#billTotal").val();
+	else{
+		var billTotal = $("#billTotal").val(0);
+		var billTotal = 0;
+	}
 	self.bill = new bill(billTotal, 0);
 }
 var mv = new AppViewModel();

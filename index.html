@@ -17,19 +17,21 @@
     <h1>BillSplitter</h1>
   </nav>
   <article class="current">
+  <center>
 	<div>
-		Total: <span data-bind="text: bill.total"></span>€<br/>
+		Total: <input data-bind="value: bill.total" id="billTotal" type="number"  style="width:70px!important;" value="0" />€<br/>
 		Parts: <span data-bind="text: bill.parts"></span><br/>
 	</div>
 
 
-	Total : <input data-bind="value: bill.total" id="billTotal" type="number" value="0" />
+	Total : 
 	<ul class="list" data-bind="foreach:bill.rows">
 		<li><div data-bind="text: fullText"></div></li>
 	</ul>
-	<input id="inputName" type="text" size="10" placeholder="Name"/>
-	<input id="inputPart" type="number" size="10" placeholder="Parts"/>
-	<span class="button" data-bind="click: bill.addRow">Add</span>
+	<input id="inputName" type="text" size="20" placeholder="Name"/>
+	<input id="inputPart" type="number" placeholder="Parts" style="width:60px!important;"/>
+	<button data-bind="click: bill.addRow" style="border:1px solid gray; margin-top:15px; width:100px; background-color: #e6e6e6">Add</button>
+  </center>
   </article>
 </body>
 <script type="text/javascript" src="js/main.js"></script>
