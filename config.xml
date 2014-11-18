@@ -34,6 +34,7 @@
 	<!--
 			PLUGINS
 	-->
+	<gap:plugin name="de.appplant.cordova.plugin.hidden-statusbar-overlay" />
 	
 	<preference name="StatusBarOverlaysWebView" value="false" />
 </widget>

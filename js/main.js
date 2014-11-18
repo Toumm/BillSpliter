@@ -10,7 +10,7 @@ function row(name, part, total){
 		var t = 0;
 		var p = parseInt(mv.bill.parts());
 		if(p > 0)
-			return t/p * self.part()+"€";
+			return Number((t/p * self.part()).toFixed(2))+"€";
 		else
 			return 0+"€";
 	});
@@ -35,9 +35,12 @@ function bill(total, p){
 			self.rows.push(r);
 			self.addparts(p);
 		}
+		$("#inputName").val('');
+		$("#inputPart").val('');
 	}
 }
 function AppViewModel(){
+
 	var self = this;
 	if($("#billTotal").val() > 0)
 		var billTotal = $("#billTotal").val();
@@ -48,4 +51,5 @@ function AppViewModel(){
 	self.bill = new bill(billTotal, 0);
 }
 var mv = new AppViewModel();
+window.plugin.statusbarOverlay.hide();
 ko.applyBindings(mv);
