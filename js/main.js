@@ -51,5 +51,4 @@ function AppViewModel(){
 	self.bill = new bill(billTotal, 0);
 }
 var mv = new AppViewModel();
-window.plugin.statusbarOverlay.hide();
 ko.applyBindings(mv);
