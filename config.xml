@@ -11,6 +11,7 @@
     <access origin="*" />
     <preference name="fullscreen" value="false" />
     <preference name="webviewbounce" value="true" />
+    <preference name="orientation" value="portrait" />
     <!--
     		ICON SETTINGS
     -->
